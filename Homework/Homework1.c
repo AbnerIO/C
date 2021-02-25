@@ -117,7 +117,7 @@ void GET_WHOLE_TEXT()
 }
 
 /* NOTES 2
-My program  evaluate character by character ('n' times)
+My program  evaluates character by character ('n' times)
 1.-First of all, it search if there is a tag (´<´ es el principal indicador de eso)    **Line 98
             If its true, it create a flag (ignore=1) 
             If its false, print the character
