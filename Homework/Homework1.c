@@ -1,5 +1,5 @@
 /* NOTES 1
-Instructions: Write or copy the text and press ENTER, then make "EOF" (crl+z in cmd or ctrl+D in C compiler), i dont know exactly how to do "EOF" in mac  
+Instructions: Write or paste the text and press ENTER, then make "EOF" (crl+z in cmd or ctrl+D in C compiler), i dont know exactly how to do "EOF" in mac  
 I made this program manually 100% by myself using strings, void function, while etc. More notes at the end
 */
 
