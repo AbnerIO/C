@@ -89,7 +89,7 @@ int main()
             {
                 ignore = 0;
             }
-            else if (text[i] == 'H' || text[i] == 'S' || text[i] == 's' || text[i] == 'h') // Or it could be an "r" or "s" of    <Script> <strong>   or    <h1,2,3,4,etc>
+            else if (text[i] == 'H' || text[i] == 'S' || text[i] == 's' || text[i] == 'h') // Or it could be an "h" or "s" of    <Script> <strong>   or    <h1,2,3,4,etc>
             {
                 possibleBoldOrScript = 1;
             }
