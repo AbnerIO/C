@@ -1,7 +1,7 @@
 // Made by myself, no copied code, but i used google for concepts and little pieces of info about prime numbers algorithms https://www.conoce3000.com/html/espaniol/Libros/Matematica01/Cap07-03-AlgoritmoDeterminarNumeroPrimo.php#:~:text=El%20algoritmo%20m%C3%A1s%20simple,%20para%20determinar%20si%20un,entonces%20es%20compuesto%20en%20caso%20contrario%20es%20primo.
 #include <stdio.h>
 #include <math.h>
-#define K 15 //How many numbers do you want to print+1 (so, if you want to print 5, write 4)
+#define K 15 //How many numbers do you want to print+1 (so, if you want to print 4, write 5)
 
 int Getprimes(int k);
 int Coutmaxdigits(int m); //Count the number of "0"s and "1"s of the largest number, because all of them will have the same quantity.
