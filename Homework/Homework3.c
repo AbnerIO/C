@@ -7,18 +7,18 @@ int main()
     {
         switch (c)
         {         // Check if theres quotes, parethesis or something like that.
-        case ']': //When close, writeall is OFF
+        case ']': 
         case '>':
         case '}':
         case ')':
-            WriteAll = 0;
+            WriteAll = 0;//When is closed, writeall is OFF
             putchar(c);
             break;
         case '[':
         case '<':
         case '(':
         case '{':
-            WriteAll = 1; //When open, writeall is ON
+            WriteAll = 1; //When is open, writeall is ON
             putchar(c);
             break;
         case '\'':
