@@ -11,9 +11,9 @@ int main()
 {
     double az[26] = {};
     double op2;
-    int pr, type, letter = 100, asign = 0, found_value = 0, new_number = 0, breac = 0;
+    int pr, type, letter = 100, asign = 0, found_value = 0, new_number = 0, forzada = 0;
     char s[MAXOP];
-    printf("Para asignar una variable escribe algo asi:  a=9 . \n-Las operaciones se hacen asi :   1 2 + , esto es igual a 1+2\n\n !!!!!! IMPORTANTE: RESPETA EL ESPACIADO ('12+' NO es lo mismo que '1 2 +')\n");
+    printf("Para asignar una variable escribe algo asi:  a=9 . \n-Para forzar la asignacion de una variable escribe algo asi: a:=8\n-Las operaciones se hacen asi :   1 2 + , esto es igual a 1+2\n\n !!!!!! IMPORTANTE: RESPETA EL ESPACIADO ('12+' NO es lo mismo que '1 2 +')\n");
     while ((type = getop(s)) != EOF)
         switch (tolower(type))
         {
@@ -125,6 +125,7 @@ int main()
             asign = 1;
             break;
         case ':':
+            forzada=1;
             break;
         case NUMBER:
             if (asign == 0)
@@ -161,7 +162,7 @@ int main()
                 {
                     if (letter == i)
                     {
-                        if (az[i] != 0)
+                        if (az[i] != 0 && forzada ==0)
                         {
                             printf("Parece que ya habias asigando valor\n -Typea 1 si quieres sobreescribir la variable:) \n-Si NO quieres sobreescribir la variable, escribe culquier otro caracter :(\n");
                             if ((pr = getchar()) != '1')
@@ -175,10 +176,12 @@ int main()
                                 printf("Se reasigno correctamente a: %d, ignore el numero de abajo\n", new_number);
                                 az[i] = new_number;
                             }
+                            forzada=0;
                         }
                         else
                         {
                             az[i] = new_number;
+                            forzada=0;
                         }
                     }
                 }
