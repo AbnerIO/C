@@ -11,7 +11,7 @@ int main()
     printf("Para asignar una variable escribe algo asi:  a=9 . \n-Para forzar la asignacion de una variable escribe algo asi: a:=8\n-Las operaciones se hacen asi :   1 2 + , esto es igual a 1+2\n\n !!!!!! IMPORTANTE: RESPETA EL ESPACIADO ('12+' NO es lo mismo que '1 2 +')\n");
     while ((type = getop(s)) != EOF)
         switch (tolower(type))
-        {
+        { /*Se evaluan todas las posibles opciones, una para cada letra ya que aplicamos tolower (no importa si escribio mayuscula o minuscula*/
         case 'a':
             push(az[0]);
             letter = 0;
@@ -120,7 +120,7 @@ int main()
             asign = 1;
             break;
         case ':':
-            forzada=1;
+            forzada=1; /*Indica que el usuario va a forzar una asignacion de variable, anotamos eso para que en el futuro no nos pregunte nada*/
             break;
         case NUMBER:
             if (asign == 0)
@@ -152,7 +152,7 @@ int main()
             break;
         case '\n':;
             if (letter != 100 && asign == 1 && found_value == 1)
-            {
+            { /*Empieza el proceso de asiganciónd e variables, preguntando si es forzado, si es nuevo o si se sobreescribira la variable*/
                 for (int i = 0; i < 26; i++)
                 {
                     if (letter == i)
@@ -183,7 +183,7 @@ int main()
             }
             else
                 printf("\t%.8g\n", pop());
-            letter = 100;
+            letter = 100; 
             asign = 0;
             found_value = 0;
             new_number = 0;
