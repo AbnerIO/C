@@ -195,35 +195,35 @@ void intento(void)
         campo_cubierta[x][y] = campo_backgroud[x][y];
         if (campo_backgroud[x][y] == 0)
         {
-            if (campo_backgroud[x - 1][y - 1] == 0)
+            if (campo_backgroud[x - 1][y - 1] != '*')
             {
                 campo_cubierta[x - 1][y] = campo_backgroud[x - 1][y];
             }
-            if (campo_backgroud[x - 1][y] == 0)
+            if (campo_backgroud[x - 1][y] != '*')
             {
                 campo_cubierta[x - 1][y] = campo_backgroud[x - 1][y];
             }
-            if (campo_backgroud[x][y - 1] == 0)
+            if (campo_backgroud[x][y - 1] != '*')
             {
                 campo_cubierta[x][y - 1] = campo_backgroud[x][y - 1];
             }
-            if (campo_backgroud[x - 1][y + 1] == 0)
+            if (campo_backgroud[x - 1][y + 1] != '*')
             {
                 campo_cubierta[x - 1][y + 1] = campo_backgroud[x - 1][y + 1];
             }
-            if (campo_backgroud[x + 1][y - 1] == 0)
+            if (campo_backgroud[x + 1][y - 1] != '*')
             {
                 campo_cubierta[x + 1][y - 1] = campo_backgroud[x + 1][y - 1];
             }
-            if (campo_backgroud[x + 1][y] == 0)
+            if (campo_backgroud[x + 1][y] != '*')
             {
                 campo_cubierta[x + 1][y] = campo_backgroud[x + 1][y];
             }
-            if (campo_backgroud[x][y + 1] == 0)
+            if (campo_backgroud[x][y + 1] != '*')
             {
                 campo_cubierta[x][y + 1] = campo_backgroud[x][y + 1];
             }
-            if (campo_backgroud[x + 1][y + 1] == 0)
+            if (campo_backgroud[x + 1][y + 1] != '*')
             {
                 campo_cubierta[x + 1][y + 1] = campo_backgroud[x + 1][y + 1];
             }
@@ -258,3 +258,4 @@ void imprimirMinasDelCampo(void) // Es hacer trampa, imprime las minas del campo
         j++;
     }
 }
+
