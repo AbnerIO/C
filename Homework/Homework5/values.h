@@ -1,4 +1,4 @@
-
+/*Archivo secundario*/
 #define LIMITE_INFERIOR_DE_MINAS 10
 #define LIMITE_SUPERIOR_DE_MINAS 20
 #define DIMENSIONES 10 // 10x10
