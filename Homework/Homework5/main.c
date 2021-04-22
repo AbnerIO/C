@@ -1,6 +1,15 @@
 /*Utilicé las siguientes referencias para hacer este proyecto solo con  <time.h> <stdlib.h> y  <stdio.h>
 1.-Para generar numeros aleatorios http://www.chuidiang.org/clinux/funciones/rand.php#:~:text=En%20C%2C%20para%20obtener%20n%C3%BAmeros%20aleatorios%2C%20tenemos%20la,%28un%20n%C3%BAmero%20enorme%2C%20como%20de%202%20mil%20millones%29.
-2.-Para la lectura de caracteres y numeros sin problemas, y evitando problemas con el buffer: http://www.carlospes.com/curso_de_lenguaje_c/01_11_la_funcion_fflush.php*/
+2.-Para la lectura de caracteres y numeros sin problemas, y evitando problemas con el buffer: http://www.carlospes.com/curso_de_lenguaje_c/01_11_la_funcion_fflush.php
+
+NOTA:Si lo corres en c compiler, probablemente las columna 9 salga un poco de la pantalla, en otros compiladores esto no pasa (testeado en VS code)
+Aun así si lo quieres correr en c compiler si jala, es solo ese detalle de la pantalla. 
+
+Primero te va a perdir x,  le das enter, despues de ya a pedir y, le das enter. 
+es de 10 x 10, pero recuerda que incia del cero por lo que su rango es de 0-9
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -8,7 +17,7 @@
 
 int main()
 {
-    printf("Bienvenido\n\nINSTRUCCIONES: Se generara un campo de 10x10 (recuerda que inicia el cero por lo que va del 0-9)\nPrimero se ingresara el valor de x:, despues el de y: EJEMPLO: x:1(pulsas enter) y:2(pulsas enter)\nLas minas te van a aparecer cuando pierdas o ganes.\nNOTA:Si lo corres en c compiler, probablemente las columna 9 salga un poco de la pantalla, en cualquier otros compiladores esto no pasa (testeado en VS code)\n Muchas suerte!\n\n\n\n");
+    printf("Bienvenido\n\nINSTRUCCIONES: Se generara un campo de 10x10 (recuerda que inicia el cero por lo que va del 0-9)\nPrimero se ingresara el valor de x:, despues el de y: EJEMPLO: x:1(pulsas enter) y:2(pulsas enter)\nLas minas te van a aparecer cuando pierdas o ganes.\n\n Muchas suerte!\n\n\n\n");
     total_mines = rand () % (LIMITE_SUPERIOR_DE_MINAS-LIMITE_INFERIOR_DE_MINAS+1) + (LIMITE_INFERIOR_DE_MINAS);  // K MINAS pseudorandomly
     generadorDeCampo();
     intento();
@@ -138,7 +147,7 @@ void intento(void)
 {
     int q = 0, i = 0, j = 0, match = 0;
     imprimirCampo();
-    while (j < DIMENSIONES) // While loop for testing whether or not the user has cleared the campo_backgroud
+    while (j < DIMENSIONES) // 
     {
         while (i < DIMENSIONES)
         {
@@ -181,7 +190,7 @@ void intento(void)
         intento();
     }
 
-    else // Verifica los alrededores, se me complicó hacer una funcion recursiva, por eso utilizo las coordenadas literales
+    else // Verifica los alrededores, se me complicó hacer una funcion recursiva
     {
         campo_cubierta[x][y] = campo_backgroud[x][y];
         if (campo_backgroud[x][y] == 0)
