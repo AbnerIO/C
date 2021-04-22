@@ -1,6 +1,6 @@
 /*Utilicé las siguientes referencias para hacer este proyecto solo con  <time.h> <stdlib.h> y  <stdio.h>
 1.-Para generar numeros aleatorios http://www.chuidiang.org/clinux/funciones/rand.php#:~:text=En%20C%2C%20para%20obtener%20n%C3%BAmeros%20aleatorios%2C%20tenemos%20la,%28un%20n%C3%BAmero%20enorme%2C%20como%20de%202%20mil%20millones%29.
-2.-Para la lectura de caracteres y numeros sin problemas, y evitando problemas con el buffer: http://www.carlospes.com/curso_de_lenguaje_c/01_11_la_funcion_fflush.php*/
+2.-Para la lectura de los caracteres y numeros sin problemas, y evitando problemas con el buffer: http://www.carlospes.com/curso_de_lenguaje_c/01_11_la_funcion_fflush.php*/
 #include "values.h"
 #include "genermap.c"
 
