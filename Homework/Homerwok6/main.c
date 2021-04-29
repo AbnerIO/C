@@ -4,7 +4,7 @@
 #include <stdlib.h> // malloc & free
 #include <ctype.h> // isspace & tolower
 #include "struct.h"
-{
+usuario *nuevoNodo(char username[MAXIMA_LONGITUD_CADENA], char password[MAXIMA_LONGITUD_CADENA]){
     // Solicitar memoria
     size_t tamanioNodo = sizeof(usuario);
     size_t tamanioNodopass = sizeof(usuario);
