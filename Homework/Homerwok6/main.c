@@ -1,4 +1,5 @@
-/* Archivo principal*/
+/* Archivo principal, Solo debes copiar y pegar ambos files (este y el .h). A mi me estaba fallando un poco el c compiler online, sin embargo si corre el programa, Si tienes algun problema como alternativa de ultimo recurso
+podrias abrir tambien el archivo completo*/
 #include <stdio.h>
 #include <string.h> // strstr
 #include <stdlib.h> // malloc & free
