@@ -9,4 +9,4 @@ typedef struct nodoCadena
     struct nodoCadena *derecha;
 } usuario;
 
-usuario *nuevoNodo(char username[MAXIMA_LONGITUD_CADENA], char password[MAXIMA_LONGITUD_CADENA])
+
