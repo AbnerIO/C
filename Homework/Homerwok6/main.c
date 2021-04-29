@@ -1,18 +1,19 @@
 /* Archivo principal, Solo debes copiar y pegar ambos files (este y el .h). A mi me estaba fallando un poco el c compiler online, sin embargo si corre el programa, Si tienes algun problema como alternativa de ultimo recurso
-podrias abrir tambien el archivo completo*/
+podrias abrir tambien el archivo completo
+REF: http://www.carlospes.com/curso_de_lenguaje_c/01_11_la_funcion_fflush.php para utilizar scanf (igual un poco de conocimiento del libro) lo hice de esta manera para trabajar con el puntero del mismo ("&"blablabla)
+Tomé de referencia tambien la lógica del programa de la ing, pero pues supongo que todos debian trabajar de la misma o de una manera similar
+*/
 #include <stdio.h>
 #include <string.h> // strstr
 #include <stdlib.h> // malloc & free
 #include <ctype.h> // isspace & tolower
 #include "struct.h"
 usuario *nuevoNodo(char username[MAXIMA_LONGITUD_CADENA], char password[MAXIMA_LONGITUD_CADENA]){
-    // Solicitar memoria
     size_t tamanioNodo = sizeof(usuario);
     size_t tamanioNodopass = sizeof(usuario);
     usuario *nodo = (usuario *)malloc(tamanioNodo);
     usuario *nodopass = (usuario *)malloc(tamanioNodopass);
-    // Asignar el dato e iniciar hojas
-    strcpy(nodo->username, username);
+    strcpy(nodo->username, username); //las ramas
     strcpy(nodo->password, password);
     nodo->izquierda = nodo->derecha = NULL;
     return nodo;
@@ -63,7 +64,7 @@ usuario *buscarUsername(usuario *nodo, char *cadena)
         return buscarUsername(nodo->izquierda, cadena);
     }
 }
-usuario *buscarPassword(usuario *nodo, char *cadena, char *pass)
+usuario *buscarPassword(usuario *nodo, char *cadena, char *pass) //ademas de buscar password, elimina el nodo, en este caso elimine tambien username, pienso que este se queda allí pero sin valor
 {
     if (nodo == NULL)
     {
@@ -75,7 +76,7 @@ usuario *buscarPassword(usuario *nodo, char *cadena, char *pass)
         {
             *nodo->username = NULL;
             *nodo->password=NULL;
-            return NULL;
+            return NULL; // el regreso de NULL es solo para hacer validaciones en el main (si devuelve null es que se hizo con exito
         }
     }
     else if (strcmp(cadena, nodo->username) > 0)
@@ -98,7 +99,7 @@ void ordenar(usuario *nodo) //(raiz)
 }
 
 
-/*agregar(raiz,"name","password")*/
+/*agregar(raiz,"name","password") es la manrea de agregar*/
 int main(int argc, char const *argv[])
 {
     char user[MAXIMA_LONGITUD_CADENA];
@@ -193,7 +194,7 @@ int main(int argc, char const *argv[])
                 getchar();
             }
         }
-        add = 0;
+        add = 0; //reseteo de banderas
         eliminacion = 0;
         ordenamiento = 0;
     }
