@@ -15,6 +15,7 @@ Sobre importacion de modulos: solo se copia y pegan en tu compilador : main.c, s
 ## Instrucciones
 
 Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos: 
+
 1.-Corre el programa
 
 2.-Inicia como administrador. (repito, el pin del administrador es "0")
