@@ -3,8 +3,7 @@
 ## Sinopsis
 
 Sobre importacion de modulos: solo se copia y pegan en tu compilador : main.c
-
-ADEMAAASS AGREGA 3 DOCUMENTOS VACIOS CUYOS NOMBRES SEAN: system.txt, times.txt & log.txt
+Crea tambien 3 archivos más: system.txt, times.txt & log.txt
 
     
 ## Validaciones y consideraciones
