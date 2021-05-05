@@ -82,12 +82,9 @@ int main()
                 fscanf(flujo, "%d %d", &temppin, &temptime);
                 if (temppin == pin)
                 {
-                    printf("se cuplio");
                     temptime += verTiempoTrabajado(pin);
-                    fputchar('c');
                     fseek(flujo, -3, SEEK_CUR);
                     fprintf(flujo, "%d %d", pin, temptime);
-                    printf("\n\n validador pin=%d temptime=%d\n\n", pin, temptime);
                     fflush(flujo);
                     fclose(flujo);
                     flag = 0;
