@@ -4,7 +4,7 @@
 
 Sobre importacion de modulos: solo se copia y pegan en tu compilador : main.c y header.h
 
-Crea tambien 3 archivos más: system.txt, times.txt & log.txt
+Los archivos .txt se crean automaticamente si sigues bien los siguientes pasos : 
 
   
 
