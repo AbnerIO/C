@@ -11,6 +11,8 @@ Los archivos .txt se crean automaticamente si sigues bien los siguientes pasos :
 
 ## Instrucciones
 
+Este programa se basa en dos interfaces distintas, 1 para el usuario/trabajador, y la otra para el administrador del sistema(el de recursos humanos:p).
+
 Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos: 
 
 1.-Corre el programa
