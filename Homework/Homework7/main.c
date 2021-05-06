@@ -23,7 +23,7 @@ int main()
     char hour[128];
     strftime(hour, 128, "%H:%M", tlocal);
 
-    printf("Eres usuario o administrador?\n-Presiona 1 si eres usuario,\n-Presiona 2 si eres admin\n");
+    printf("Eres un trabajador o administrador?\n-Presiona 1 si eres un trabajador,\n-Presiona 2 si eres admin\n");
     scanf("%d", &option);
     if (option == 1) //opciones de trabajador
     {
