@@ -15,19 +15,19 @@ Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos:
 
 1.-Corre el programa
 
-2.-Inicia como administrador. (repito, el pin del administrador es "0")
+2.-Inicia como administrador. (cuando te pida el pin, ingresa "0")
 
 3.-Agrega un trabajador 
 
 4.-Cierra y abre el programa pero ahora inicia sesion en modo trabajador con el pin que creaste.
 
-5.-registra tu entrada al jale.
+5.-Registra tu entrada al jale.
 
 6.-Cierra y vuelve a abrir el programa (con el pin del trajador del paso anterior) y registra tu salida del jale.
 
-7.-vuelve a ejecutar el programa en modo administrador (recuerda, el pin del admin es el "0").
+7.-Vuelve a ejecutar el programa en modo administrador (recuerda, el pin del admin es el "0").
 
-8.-verifica por ejemplo la asistencia de algun trabajador, las horas trabajadas, etc. 
+8.-Verifica por ejemplo la asistencia de algun trabajador, las horas trabajadas, etc. 
 
 9.-Listo, ya sabes como funciona el programa
 
