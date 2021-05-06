@@ -1,8 +1,9 @@
 ## ESTE ARCHIVO SOLO CONTIENE INSTRUCCIONES, NO ES NECESARIO IMPORTARLO
 
-## Sinopsis
+## Sinopsis LEER!
 
-Sobre importacion de modulos: solo se copia y pegan en tu compilador : main.c
+Sobre importacion de modulos: solo se copia y pegan en tu compilador : main.c y header.h
+
 Crea tambien 3 archivos más: system.txt, times.txt & log.txt
 
     
