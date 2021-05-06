@@ -19,7 +19,7 @@ Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos:
 
 3.-Agrega un trabajador 
 
-4.-Cierra y abre el programa pero ahora inicia sesion en modo trabajador con el pin que creaste.
+4.-Cierra y abre el programa pero ahora inicia sesion en modo trabajador con el pin que se le asignó (si es el primera vez, el pin de ese trabajador es 1).
 
 5.-Registra tu entrada al jale.
 
