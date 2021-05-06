@@ -23,7 +23,7 @@ Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos:
 
 5.-Registra tu entrada al jale.
 
-6.-Cierra y vuelve a abrir el programa (con el pin del trajador del paso anterior) y registra tu salida del jale.
+6.-Vuelve a abrir el programa (con el pin del trajador del paso anterior) y registra tu salida del jale.
 
 7.-Vuelve a ejecutar el programa en modo administrador (recuerda, el pin del admin es el "0").
 
