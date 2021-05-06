@@ -118,8 +118,8 @@ int main()
                 case 2://creacion de usuario
                     crearRegistro();
                     break;
-                case 3://reporte de  registros
-                    printf("Escribe el pin del usuario para ver sus asistencias(asegurate de que sea valido): \n");
+                case 3://reporte de  horas
+                    printf("Escribe el pin del usuario para ver sus horas trabajadas(asegurate de que sea valido): \n");
                     fflush(stdin);
                     scanf("%d", &pin);
                     if (checkPines(pin) != 1) //verificar si ese pin existe en el sistema
