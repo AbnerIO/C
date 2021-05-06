@@ -44,7 +44,7 @@ Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos:
 Ninguna. Solo el libro. 
 
 ## Autor(es)
-Abner Velázquez
+Abner Velázquez, con un poco de colaboracion con toño cortez
 
 ## License
 For Academic Purposes Only
