@@ -6,12 +6,7 @@ Sobre importacion de modulos: solo se copia y pegan en tu compilador : main.c y 
 
 Crea tambien 3 archivos más: system.txt, times.txt & log.txt
 
-    
-## Validaciones y consideraciones
-
-    -El pin del administrador es el "0" (si te pide el pin escribe 0, de otra manera te va a botar)
-    -Los trabajadores solo pueden tener pines de 1 digito (lo hice así para que no pierdas tiempo con pines de tipo : 12hkg123)
-    -Lee las intrucciones, si tratas de ingresar con un pin que no has registrado, te va a botar a la verga. 
+  
 
 
 ## Instrucciones
@@ -35,6 +30,12 @@ Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos:
 8.-verifica por ejemplo la asistencia de algun trabajador, las horas trabajadas, etc. 
 
 9.-Listo, ya sabes como funciona el programa
+
+## Validaciones y consideraciones
+
+    -El pin del administrador es el "0" (si te pide el pin escribe 0, de otra manera te va a botar)
+    -Los trabajadores solo pueden tener pines de 1 digito (lo hice así para que no pierdas tiempo con pines de tipo : 12hkg123)
+    -Lee las intrucciones, si tratas de ingresar con un pin que no has registrado, te va a botar a la verga. 
 
 ## Referencias
 
