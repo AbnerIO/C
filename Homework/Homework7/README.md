@@ -37,7 +37,7 @@ Para comprobar el funcionamiento del programa te recomiendo seguir estos pasos:
 
     -El pin del administrador es el "0" (si te pide el pin escribe 0, de otra manera te va a botar)
     -Los trabajadores solo pueden tener pines de 1 digito (lo hice así para que no pierdas tiempo con pines de tipo : 12hkg123)
-    -Lee las intrucciones, si tratas de ingresar con un pin que no has registrado, te va a botar a la verga. 
+    -Lee las intrucciones, si tratas de ingresar con un pin que no has registrado, te va a sacar 
 
 ## Referencias
 
