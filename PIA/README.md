@@ -13,7 +13,7 @@ I'm going to develop an app that will help you manage your personal expenses.
 - Password
  ```plain
   - Before the main interface
-  - Modifiable
+  - Can be changed
 ```
 - Add Products
 ```plain
