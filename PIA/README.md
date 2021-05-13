@@ -5,7 +5,7 @@
 I'm going to develop an app that will help you manage your personal expenses.
 
   
-## project requirements
+## Project requirements
 
 
 - Password
