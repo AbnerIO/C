@@ -28,7 +28,7 @@ I'm going to develop an app that will help you manage your personal expenses.
   - View all operations
   - View all passives
   - View all actives
-  - Search by Date
+  - Search by Date (maybe)
   - Search By categorie
  ```
 - Opperations
@@ -72,11 +72,11 @@ Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_)
   
   findAllByAmount(type _passive/active_, min, max),
   
-  findAllByDate(Date) , verifyPassword(), 
+  verifyPassword(), 
   
   changePassword(newPassword)
 
-  Maybe : timeStampConversor() , sum(),  
+  Maybe : timeStampConversor() , sum(), findAllByDate(Date) 
 
 
 ## UI :iphone:
