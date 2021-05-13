@@ -23,7 +23,7 @@ I'm going to develop an app that will help you manage your personal expenses.
   - Date
  ```
  
--Ask for information 
+- Ask for information 
 ```plain
   - View all operations
   - View all passives
@@ -60,9 +60,21 @@ Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_)
 ## Functions :octocat:
 
 
-  create(gasto), delete(type _passive/active_, nombre del gasto), printfPassives(), printfActives() 
+  create(gasto),
+  
+  delete(type _passive/active_, nombre del gasto), 
+  
+  printfPassives(), 
+  
+  printfActives() 
 
-  findAllByCategorie(categorie),findAllByAmount(type _passive/active_, min, max), findAllByDate(Date) , verifyPassword(), changePassword(newPassword)
+  findAllByCategorie(categorie),
+  
+  findAllByAmount(type _passive/active_, min, max),
+  
+  findAllByDate(Date) , verifyPassword(), 
+  
+  changePassword(newPassword)
 
   Maybe : timeStampConversor() , sum(),  
 
