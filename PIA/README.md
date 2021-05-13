@@ -48,11 +48,10 @@ I'm going to develop an app that will help you manage your personal expenses.
 ### .txt Format 
 
 
-Sign - categorie - amount 
+Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_)
      
-     - Games 1200                                       + I_sold_gummies_idk 1200
-     - Rectoria  2485
-      
+     -1200  CGames DI_bought_7DTD                              +1200 Ctrade DI_sold_gummies_idk
+     -2485 CUniversity DRectoria
       
  In this example, the balance will be + 1200 - 1200 - 2485 = **-2485**
     
