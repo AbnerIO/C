@@ -20,7 +20,7 @@ I'm going to develop an app that will help you manage your personal expenses.
   - Actives (+ profits) 
   - Passives (- expenses)
   - With Categories (medical, university, bills,etc) 
-  - Date (maybe)
+  - Date 
  ```
  
 - Ask for information 
@@ -49,10 +49,10 @@ I'm going to develop an app that will help you manage your personal expenses.
 
 !!Experimental 👨‍🔬
 
-Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_)
+Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_) - Date
      
-     -1200  CGames DI_bought_7DTD                              +1200 Ctrade DI_sold_gummies_idk
-     -2485 CUniversity DRectoria
+     -1200  CGames DI_bought_7DTD 1620915321                              +1200 Ctrade DI_sold_gummies_idk 1620915329
+     -2485 CUniversity DRectoria 1620915324
       
  In this example, the balance will be + 1200 - 1200 - 2485 = **-2485**
     
