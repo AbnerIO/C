@@ -60,11 +60,11 @@ Sign - categorie - amount
 ## Functions :coffee:
 
 
-create(gasto), delete(nombre del gasto), printfPassives(), printfActives() 
+  create(gasto), delete(type _passive/active_, nombre del gasto), printfPassives(), printfActives() 
 
-findAllByCategorie(categorie),findAllByAmount(type _passive/active_, min, max), findAllByDate(Date) , verifyPassword(), changePassword(newPassword)
+  findAllByCategorie(categorie),findAllByAmount(type _passive/active_, min, max), findAllByDate(Date) , verifyPassword(), changePassword(newPassword)
 
-Maybe : timeStampConversor() , sum(),  
+  Maybe : timeStampConversor() , sum(),  
 
 
 ## UI :iphone:
