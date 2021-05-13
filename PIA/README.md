@@ -47,6 +47,7 @@ I'm going to develop an app that will help you manage your personal expenses.
 
 ### .txt Format 
 
+!!Experimental 👨‍🔬
 
 Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_)
      
@@ -56,7 +57,7 @@ Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_)
  In this example, the balance will be + 1200 - 1200 - 2485 = **-2485**
     
  		
-## Functions :coffee:
+## Functions :octocat:
 
 
   create(gasto), delete(type _passive/active_, nombre del gasto), printfPassives(), printfActives() 
