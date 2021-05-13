@@ -65,15 +65,16 @@ findAllByCategorie(categorie),findAllByAmount(type _passive/active_, min, max), 
 Maybe : timeStampConversor() , sum(),  
 
 
-##UI
+## UI
+
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/2021-05-13%2008_41_47-Window.png" width="550px" height="450px"></a>
 
 
-
-## Referencias
+## References
 
 none atm
 
-## Autor(es)
+## Autor(s)
 Abner Velázquez
 
 ## License
