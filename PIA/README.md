@@ -1,11 +1,13 @@
 # Budgeting App
 
-## Synopsis
+
+
+## Synopsis :dizzy_face:
 
 I'm going to develop an app that will help you manage your personal expenses.
 
   
-## Project requirements
+## Project requirements :dart:
 
 
 - Password
@@ -35,7 +37,7 @@ I'm going to develop an app that will help you manage your personal expenses.
   - Get total Balance
 ```
 
-## Files
+## Files :floppy_disk:
 
 | **.c** |  **.h** | **.txt** |
 |:-----|:--------:|:--------:|
@@ -43,7 +45,7 @@ I'm going to develop an app that will help you manage your personal expenses.
 | functions   |    |   _Actives_  |
 
 
-### .txt Format 
+### .txt Format  :page_facing_up:
 
 
 Sign - categorie - amount 
@@ -55,7 +57,7 @@ Sign - categorie - amount
  In this example, the balance will be + 1200 - 1200 - 2485 = **-2485**
     
  		
-## Functions
+## Functions :coffee:
 
 
 create(gasto), delete(nombre del gasto), printfPassives(), printfActives() 
@@ -65,12 +67,12 @@ findAllByCategorie(categorie),findAllByAmount(type _passive/active_, min, max), 
 Maybe : timeStampConversor() , sum(),  
 
 
-## UI
+## UI :iphone:
 
 <img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/2021-05-13%2008_41_47-Window.png" width="550px" height="450px"></a>
 
 
-## References
+## References :page_with_curl:
 
 none atm
 
