@@ -37,7 +37,7 @@ I'm going to develop an app that will help you manage your personal expenses.
   - Get total Balance
 ```
 
-## Files :floppy_disk:
+## Files :page_facing_up:
 
 | **.c** |  **.h** | **.txt** |
 |:-----|:--------:|:--------:|
@@ -45,7 +45,7 @@ I'm going to develop an app that will help you manage your personal expenses.
 | functions   |    |   _Actives_  |
 
 
-### .txt Format  :page_facing_up:
+### .txt Format 
 
 
 Sign - categorie - amount 
