@@ -76,7 +76,7 @@ Maybe : timeStampConversor() , sum(),
 
 none atm
 
-## Autor(s)
+## Author(s)
 Abner Velázquez M: 1960233 Programacion Estructurada
 
 ## License
