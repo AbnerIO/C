@@ -20,7 +20,7 @@ I'm going to develop an app that will help you manage your personal expenses.
   - Actives (+ profits) 
   - Passives (- expenses)
   - With Categories (medical, university, bills,etc) 
-  - Date
+  - Date (maybe)
  ```
  
 - Ask for information 
