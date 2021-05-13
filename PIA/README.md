@@ -17,8 +17,8 @@ I'm going to develop an app that will help you manage your personal expenses.
 ```
 - Add Products
 ```plain
-  - Actives (+ profits) 
-  - Passives (- expenses)
+  - + profits
+  -  - expenses
   - With Categories (medical, university, bills,etc) 
   - Date 
  ```
@@ -26,8 +26,8 @@ I'm going to develop an app that will help you manage your personal expenses.
 - Ask for information 
 ```plain
   - View all operations
-  - View all passives
-  - View all actives
+  - View all negatives
+  - View all negatives
   - Search by Date (maybe)
   - Search By categorie
  ```
@@ -41,8 +41,8 @@ I'm going to develop an app that will help you manage your personal expenses.
 
 | **.c** |  **.h** | **.txt** |
 |:-----|:--------:|:--------:|
-| main  | header | _Passives_|
-| functions   |    |   _Actives_  |
+| main  | header | _Positives_|
+| functions   |    |   _Negatives_  |
 
 
 ### .txt Format 
@@ -64,9 +64,9 @@ Sign - Amount - Categorie (_flag:"C"_) - Description (_flag:"D"_) - Date
   
   delete(type _passive/active_, nombre del gasto), 
   
-  printfPassives(), 
+  printPositives(), 
   
-  printfActives() 
+  printfNegatives() 
 
   findAllByCategorie(categorie),
   
