@@ -26,7 +26,7 @@ I'm going to develop an app that will help you manage your personal expenses.
 - Ask for information 
 ```plain
   - View all operations
-  - View all negatives
+  - View all positives
   - View all negatives
   - Search by Date (maybe)
   - Search By categorie
