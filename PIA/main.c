@@ -33,10 +33,12 @@ int main()
             printf("Opcion 1\n\n");
             imprimeLinea();
             imprimeFichero();
+            imprimeLinea();
             break;
 
         case '2':
             printf("Opcion 2\n\n");
+            imprimeLinea();
             ingresarConcepto();
             imprimeLinea();
             break;
@@ -52,12 +54,14 @@ int main()
 
         case '4':
             printf("Opcion 4\n\n");
+            imprimeLinea();
             eliminar();
             imprimeLinea();
             break;
 
         case '5':
             printf("Opcion 5\n\n");
+            imprimeLinea();
             cambiarPassword();
             imprimeLinea();
             break;
@@ -161,7 +165,7 @@ int imprimeFichero(void)
     FILE *fichero;
     char c;
 
-    printf("Todas las entradas de dinero: \n");
+    printf("    Todas las entradas de dinero: \n");
     fichero = fopen("Activos.txt", "rb");
     while (!feof(fichero))
     {
@@ -171,7 +175,7 @@ int imprimeFichero(void)
     fclose(fichero);
 
     fichero = fopen("Pasivos.txt", "rb");
-    printf("Todos los gastos: \n");
+    printf("    Todos los gastos: \n");
     while (!feof(fichero))
     {
         c = getc(fichero);
