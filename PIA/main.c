@@ -45,7 +45,7 @@ int main()
 
         case '3':
             imprimeLinea();
-            printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver todos los activos\n2     Ver todos los pasivos\n3     Ver gastos por fecha\n4     Ver gastos por categoria\n5     Salir\n");
+            printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver gastos por fecha\n2     Ver gastos por categoria\n3     Salir\n");
             fflush(stdin);
             opt = getchar();
             consultas(opt);
@@ -89,33 +89,20 @@ int imprimeLinea()
 
 int consultas(int option)
 {
+    char busqueda[10];
     switch (option)
     {
     case '1':
-        printf("Opcion 1\n\n");
-        imprimeLinea();
+        printf("Opcion 1: categoria\n\n");
         break;
 
     case '2':
-        printf("Opcion 2\n\n");
-        imprimeLinea();
+        printf("Opcion 2: fecha\n\n");
         break;
-
+        
     case '3':
         printf("Opcion 3\n\n");
-        imprimeLinea();
         break;
-
-    case '4':
-        printf("Opcion 4\n\n");
-        imprimeLinea();
-        break;
-
-    case '5':
-        printf("Opcion 5\n\n");
-        imprimeLinea();
-        break;
-
     default:
         printf("Opcion No valida\n\n");
         break;
