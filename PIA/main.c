@@ -16,8 +16,7 @@ FILE *flujo;
 int main()
 {
     int opt, bucle = 1;
-    char password[] = {"abner11"}, temppas[10], ret;
-
+   
     time_t tiempo = time(0); //Genera timestamp --> "%lu", (unsigned long)time(NULL)
 
     bucle = validarPassword();
@@ -271,7 +270,7 @@ int eliminar(void)
     :  (rename("replica.c", "Activos.txt")); 
     
     printf("\n Despues de ser modificado, ahora los valores son los siguientes: \n");
-    
+
     (opt==1) 
     ? (fileptr1 = fopen("Pasivos.txt", "r")) 
     :  (fileptr1 = fopen("Activos.txt", "r")); 
