@@ -5,6 +5,7 @@
 #include <ctype.h>
 
 int imprimeLinea(void);
+int imprimeFichero(void);
 int consultas();
 int ingresarConcepto(void);
 FILE *flujo;
@@ -34,6 +35,7 @@ int main()
             case '1':
                 printf("Opcion 1\n\n");
                 imprimeLinea();
+                imprimeFichero();
                 break;
 
             case '2':
@@ -119,16 +121,16 @@ int ingresarConcepto(void)
 {
     double monto;
     char categoria[15], concepto[15];
-    int opt, file=1 ;// file 1 pasivo, 2 activo
+    int opt, file = 1; // file 1 pasivo, 2 activo
     printf("Si es un pasivo presiona 1, si es un activo presiona 2\n\n");
     fflush(stdin);
     scanf("%d", &opt);
-    
-    if(opt!=1 && opt!=2){
+
+    if (opt != 1 && opt != 2)
+    {
         printf("No es una opcion valida\n");
         return 0;
     }
-
 
     printf("Escribe el monto:\n\n");
     fflush(stdin);
@@ -141,15 +143,40 @@ int ingresarConcepto(void)
     scanf("%s", &concepto);
     if (opt == 1)
     {
-    flujo = fopen("Pasivos.txt", "a");
-        
+        flujo = fopen("Pasivos.txt", "a");
     }
     else if (opt == 2)
     {
-    flujo = fopen("Activos.txt", "a");
+        flujo = fopen("Activos.txt", "a");
     }
     fprintf(flujo, "%lf %s %s %lu\n", monto, categoria, concepto, (unsigned long)time(NULL));
     printf("Se ha registrado correctamente\nmonto: %lf  , categoria: %s , concepto: %s, tiempo : %lu\n ", monto, categoria, concepto, (unsigned long)time(NULL));
     fflush(flujo);
     fclose(flujo);
+}
+
+int imprimeFichero(void)
+{
+    FILE *fichero;
+    char c;
+
+    printf("Todas las entradas de dinero: \n");
+    fichero = fopen("Activos.txt", "rb");
+    while (!feof(fichero))
+    {
+        c = getc(fichero);
+        printf("%c", c);
+    }
+    fclose(fichero);
+
+    fichero = fopen("Pasivos.txt", "rb");
+    printf("Todos los gastos: \n");
+    while (!feof(fichero))
+    {
+        c = getc(fichero);
+        printf("%c", c);
+    }
+    fclose(fichero);
+
+    return 0;
 }
