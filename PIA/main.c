@@ -10,6 +10,8 @@ int imprimeFichero(void);
 int cambiarPassword(void);
 int consultas();
 int ingresarConcepto(void);
+int eliminar(void);
+
 FILE *flujo;
 int main()
 {
@@ -50,6 +52,7 @@ int main()
 
         case '4':
             printf("Opcion 4\n\n");
+            eliminar();
             imprimeLinea();
             break;
 
@@ -211,4 +214,95 @@ int validarPassword()
     }
     else
         return 0;
+}
+
+int eliminar(void)
+{
+    FILE *fileptr1, *fileptr2;
+
+    char ch;
+    int delete_line, temp = 1, opt;
+
+    printf("Deseas eliminar un pasivo? Presiona 1\nDeseas eliminar un activo? presiona 2\n");
+    fflush(stdin),
+
+        scanf("%d", &opt);
+    if (opt != 1 && opt != 2)
+    {
+        printf("No introduciste una opcion valida\n");
+        return 0;
+    }
+
+    //Abir para leer
+    if (opt == 1)
+    {
+        fileptr1 = fopen("Pasivos.txt", "r");
+    }
+    else if (opt == 2)
+    {
+        fileptr1 = fopen("Activos.txt", "r");
+    }
+    ch = getc(fileptr1);
+    while (ch != EOF)
+    {
+        printf("%c", ch);
+        ch = getc(fileptr1);
+    }
+    //rewind
+    rewind(fileptr1);
+    printf(" \n Ingresa el numero de linea de gasto que deseas eliminar (el orden es de arriba hacia bajo: gasto 1=presiona 1, gasto 2=presiona 2)");
+    scanf("%d", &delete_line);
+    //open new file in write mode
+    fileptr2 = fopen("replica.c", "w");
+    ch = getc(fileptr1);
+    while (ch != EOF)
+    {
+        ch = getc(fileptr1);
+        if (ch == '\n')
+        {
+            temp++;
+        }
+        //except the line to be deleted
+        if (temp != delete_line)
+        {
+            //copy all lines in file replica.c
+            putc(ch, fileptr2);
+        }
+    }
+    fclose(fileptr1);
+    fclose(fileptr2);
+    if (opt == 1)
+    {
+        remove("Pasivos.txt");
+    }
+    else if (opt == 2)
+    {
+        remove("Activos.txt");
+    }
+    //rename the file replica.c to original name
+    if (opt == 1)
+    {
+        rename("replica.c", "Pasivos.txt");
+    }
+    else if (opt == 2)
+    {
+        rename("replica.c", "Activos.txt");
+    }
+    printf("\n Despues de ser modificado, ahora los valores son los siguientes: \n");
+    if (opt == 1)
+    {
+        fileptr1 = fopen("Pasivos.txt", "r");
+    }
+    else if (opt == 2)
+    {
+        fileptr1 = fopen("Activos.txt", "r");
+    }
+    ch = getc(fileptr1);
+    while (ch != EOF)
+    {
+        printf("%c", ch);
+        ch = getc(fileptr1);
+    }
+    fclose(fileptr1);
+    return 0;
 }
