@@ -65,6 +65,9 @@ int main()
 
             case '6':
                 printf("Opcion 6\n\n");
+                 printf("Hasta pronto!\n\n");
+                exit(1);
+                getchar();
                 imprimeLinea();
                 break;
 
