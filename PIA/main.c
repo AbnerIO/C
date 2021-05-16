@@ -147,8 +147,8 @@ int ingresarConcepto(void)
     {
         flujo = fopen("Activos.txt", "a");
     }
-    fprintf(flujo, "%lf %s %s %lu\n", monto, categoria, concepto, (unsigned long)time(NULL));
-    printf("Se ha registrado correctamente\nmonto: %lf  , categoria: %s , concepto: %s, tiempo : %lu\n ", monto, categoria, concepto, (unsigned long)time(NULL));
+    fprintf(flujo, "%.2lf %s %s %lu\n", monto, categoria, concepto, (unsigned long)time(NULL));
+    printf("Se ha registrado correctamente\nmonto: %.2lf  , categoria: %s , concepto: %s, tiempo : %lu\n ", monto, categoria, concepto, (unsigned long)time(NULL));
     fflush(flujo);
     fclose(flujo);
 }
