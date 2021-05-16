@@ -4,8 +4,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+int validarPassword();
 int imprimeLinea(void);
 int imprimeFichero(void);
+int cambiarPassword(void);
 int consultas();
 int ingresarConcepto(void);
 FILE *flujo;
@@ -16,15 +18,11 @@ int main()
 
     time_t tiempo = time(0); //Genera timestamp --> "%lu", (unsigned long)time(NULL)
 
-    printf("Bienvenido : Escribe tu password\n");
-    fflush(stdin),
-        scanf("%s", temppas);
-    imprimeLinea();
 
     while (bucle == 1)
     {
 
-        if (!(ret = strncmp(password, temppas, 10))) //Validacion contraseña if(!)son iguales
+        if (validarPassword() ==1)
         {
             printf("Introduce la opcion que desees:\n1     Deseo ver todos los gastos\n2     Quiero ingresar algo\n3     Quiero hacer una consulta\n4     Quiero eliminar un gasto\n5     Quiero cambiar mi password\n6     Quiero salir\n");
             fflush(stdin);
@@ -76,6 +74,9 @@ int main()
                 imprimeLinea();
                 break;
             }
+        }else {
+        printf("\nLa password no coincide, adios\n");
+        exit(1);
         }
     }
 }
@@ -180,6 +181,25 @@ int imprimeFichero(void)
         printf("%c", c);
     }
     fclose(fichero);
-
     return 0;
+}
+int cambiarPassword(void){
+
+}
+int validarPassword(){
+    char ret, temppass[10], password[10];
+
+    FILE *fichero;
+    fichero = fopen("pass.txt", "rb");
+    fflush(stdin);
+    fscanf(fichero, "%s", &password);
+    printf("Bienvenido : Escribe tu password\n");
+    fflush(stdin);
+    scanf("%s", temppass);
+    if (!(ret = strncmp(password, temppass, 10)))
+    {
+        return 1;
+    }else 
+    return 0;
+    
 }
