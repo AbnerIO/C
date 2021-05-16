@@ -18,65 +18,59 @@ int main()
 
     time_t tiempo = time(0); //Genera timestamp --> "%lu", (unsigned long)time(NULL)
 
-
+    bucle = validarPassword();
     while (bucle == 1)
     {
+        printf("Introduce la opcion que desees:\n1     Deseo ver todos los gastos\n2     Quiero ingresar algo\n3     Quiero hacer una consulta\n4     Quiero eliminar un gasto\n5     Quiero cambiar mi password\n6     Quiero salir\n");
+        fflush(stdin);
+        opt = getchar();
 
-        if (validarPassword() ==1)
+        switch (opt)
         {
-            printf("Introduce la opcion que desees:\n1     Deseo ver todos los gastos\n2     Quiero ingresar algo\n3     Quiero hacer una consulta\n4     Quiero eliminar un gasto\n5     Quiero cambiar mi password\n6     Quiero salir\n");
+        case '1':
+            printf("Opcion 1\n\n");
+            imprimeLinea();
+            imprimeFichero();
+            break;
+
+        case '2':
+            printf("Opcion 2\n\n");
+            ingresarConcepto();
+            imprimeLinea();
+            break;
+
+        case '3':
+            imprimeLinea();
+            printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver todos los activos\n2     Ver todos los pasivos\n3     Ver gastos por fecha\n4     Ver gastos por categoria\n5     Salir\n");
             fflush(stdin);
             opt = getchar();
+            consultas(opt);
+            imprimeLinea();
+            break;
 
-            switch (opt)
-            {
-            case '1':
-                printf("Opcion 1\n\n");
-                imprimeLinea();
-                imprimeFichero();
-                break;
+        case '4':
+            printf("Opcion 4\n\n");
+            imprimeLinea();
+            break;
 
-            case '2':
-                printf("Opcion 2\n\n");
-                ingresarConcepto();
-                imprimeLinea();
-                break;
+        case '5':
+            printf("Opcion 5\n\n");
+            cambiarPassword();
+            imprimeLinea();
+            break;
 
-            case '3':
-                imprimeLinea();
-                printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver todos los activos\n2     Ver todos los pasivos\n3     Ver gastos por fecha\n4     Ver gastos por categoria\n5     Salir\n");
-                fflush(stdin);
-                opt = getchar();
-                consultas(opt);
-                imprimeLinea();
-                break;
+        case '6':
+            printf("Opcion 6\n\n");
+            printf("Hasta pronto!\n\n");
+            exit(1);
+            getchar();
+            imprimeLinea();
+            break;
 
-            case '4':
-                printf("Opcion 4\n\n");
-                imprimeLinea();
-                break;
-
-            case '5':
-                printf("Opcion 5\n\n");
-                imprimeLinea();
-                break;
-
-            case '6':
-                printf("Opcion 6\n\n");
-                 printf("Hasta pronto!\n\n");
-                exit(1);
-                getchar();
-                imprimeLinea();
-                break;
-
-            default:
-                printf("\nNo selecionaste una opcion valida, te dare otra oportunidad\n");
-                imprimeLinea();
-                break;
-            }
-        }else {
-        printf("\nLa password no coincide, adios\n");
-        exit(1);
+        default:
+            printf("\nNo selecionaste una opcion valida, te dare otra oportunidad\n");
+            imprimeLinea();
+            break;
         }
     }
 }
@@ -183,10 +177,23 @@ int imprimeFichero(void)
     fclose(fichero);
     return 0;
 }
-int cambiarPassword(void){
+int cambiarPassword(void)
+{
+    char newPassword[10];
 
+    FILE *fichero;
+    fichero = fopen("pass.txt", "w");
+
+    printf("Introduce tu nueva password (maximo 10 caracteres):\n");
+    fflush(stdin);
+    scanf("%s", &newPassword);
+    fprintf(fichero, "%s", &newPassword);
+    printf("Se ha modificado tu password con exito. Ahora es : %s", newPassword);
+    fflush(flujo);
+    fclose(flujo);
 }
-int validarPassword(){
+int validarPassword()
+{
     char ret, temppass[10], password[10];
 
     FILE *fichero;
@@ -196,10 +203,12 @@ int validarPassword(){
     printf("Bienvenido : Escribe tu password\n");
     fflush(stdin);
     scanf("%s", temppass);
+    fflush(flujo);
+    fclose(flujo);
     if (!(ret = strncmp(password, temppass, 10)))
     {
         return 1;
-    }else 
-    return 0;
-    
+    }
+    else
+        return 0;
 }
