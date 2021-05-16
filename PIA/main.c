@@ -99,7 +99,7 @@ int consultas(int option)
     case '2':
         printf("Opcion 2: fecha\n\n");
         break;
-        
+
     case '3':
         printf("Opcion 3\n\n");
         break;
@@ -225,14 +225,11 @@ int eliminar(void)
     }
 
     //Abir para leer
-    if (opt == 1)
-    {
-        fileptr1 = fopen("Pasivos.txt", "r");
-    }
-    else if (opt == 2)
-    {
-        fileptr1 = fopen("Activos.txt", "r");
-    }
+
+    (opt==1) 
+    ? (fileptr1 = fopen("Pasivos.txt", "r")) 
+    :  (fileptr1 = fopen("Activos.txt", "r")); 
+    
     ch = getc(fileptr1);
     while (ch != EOF)
     {
@@ -262,32 +259,23 @@ int eliminar(void)
     }
     fclose(fileptr1);
     fclose(fileptr2);
-    if (opt == 1)
-    {
-        remove("Pasivos.txt");
-    }
-    else if (opt == 2)
-    {
-        remove("Activos.txt");
-    }
+    
+    (opt==1) 
+    ? (remove("Pasivos.txt")) 
+    :  (remove("Activos.txt")); 
+    
     //rename the file replica.c to original name
-    if (opt == 1)
-    {
-        rename("replica.c", "Pasivos.txt");
-    }
-    else if (opt == 2)
-    {
-        rename("replica.c", "Activos.txt");
-    }
+
+    (opt==1) 
+    ? (rename("replica.c", "Pasivos.txt")) 
+    :  (rename("replica.c", "Activos.txt")); 
+    
     printf("\n Despues de ser modificado, ahora los valores son los siguientes: \n");
-    if (opt == 1)
-    {
-        fileptr1 = fopen("Pasivos.txt", "r");
-    }
-    else if (opt == 2)
-    {
-        fileptr1 = fopen("Activos.txt", "r");
-    }
+    
+    (opt==1) 
+    ? (fileptr1 = fopen("Pasivos.txt", "r")) 
+    :  (fileptr1 = fopen("Activos.txt", "r")); 
+   
     ch = getc(fileptr1);
     while (ch != EOF)
     {
