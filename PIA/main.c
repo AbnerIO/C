@@ -11,6 +11,7 @@ int cambiarPassword(void);
 int consultas();
 int ingresarConcepto(void);
 int eliminar(void);
+int buscarCategoria(char categoria[]);
 int imprimirPorFecha();
 
 FILE *flujo;
@@ -95,6 +96,10 @@ int consultas(int option)
     {
     case '1':
         printf("Opcion 1: categoria\n\n");
+        printf("Escribe la categoria que quieres ver(asegurate que exista)\n");
+        fflush(stdin);
+        scanf("%s", busqueda);
+    buscarCategoria(busqueda);
         break;
 
     case '2':
@@ -110,6 +115,37 @@ int consultas(int option)
         break;
     }
 };
+
+int buscarCategoria(char categoria[]){
+    FILE *fichero;
+    char categoriaTemp[10], concepto[20];
+    double monto;
+    int date;
+    fichero =fopen("Activos.txt", "rb");
+    printf("\n Activos encontrados con la categoria: %s\n", categoria);
+    while (!feof(fichero))
+        {
+            printf("\n");
+            fscanf(fichero, "%lf  %s %s %d", &monto, categoriaTemp,concepto, &date);
+            if(strcmp(categoria, categoriaTemp) ==0){
+               printf("%lf %s %s %d\n", monto, concepto, categoria, date);
+            }
+        }
+        fflush(fichero);
+        fclose(fichero);
+        fichero=fopen("Pasivos.txt", "rb");
+        printf("\n Pasivos encontrados con la categoria: %s\n", categoria);
+    while (!feof(fichero))
+        {
+            printf("\n");
+            fscanf(fichero, "%lf  %s %s %d", &monto, categoriaTemp,concepto, &date);
+            if(strcmp(categoria, categoriaTemp) ==0){
+               printf("%lf %s %s %d\n", monto, concepto, categoria, date);
+            }
+        }
+        fclose(fichero);
+        return 0;
+}
 
 int ingresarConcepto(void)
 {
