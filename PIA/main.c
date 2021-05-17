@@ -11,12 +11,13 @@ int cambiarPassword(void);
 int consultas();
 int ingresarConcepto(void);
 int eliminar(void);
+int imprimirPorFecha();
 
 FILE *flujo;
 int main()
 {
     int opt, bucle = 1;
-   
+
     time_t tiempo = time(0); //Genera timestamp --> "%lu", (unsigned long)time(NULL)
 
     bucle = validarPassword();
@@ -44,7 +45,7 @@ int main()
 
         case '3':
             imprimeLinea();
-            printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver gastos por fecha\n2     Ver gastos por categoria\n3     Salir\n");
+            printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver gastos por categoria\n2     Ver por fecha\n3     Salir\n");
             fflush(stdin);
             opt = getchar();
             consultas(opt);
@@ -88,7 +89,8 @@ int imprimeLinea()
 
 int consultas(int option)
 {
-    char busqueda[10];
+    char busqueda[10]; //orden1 = ascendente orden 2 descendente
+    int orden;
     switch (option)
     {
     case '1':
@@ -96,11 +98,12 @@ int consultas(int option)
         break;
 
     case '2':
-        printf("Opcion 2: fecha\n\n");
+    orden=1;
+        imprimirPorFecha(orden);
         break;
-
     case '3':
         printf("Opcion 3\n\n");
+        return 0;
         break;
     default:
         printf("Opcion No valida\n\n");
@@ -128,10 +131,10 @@ int ingresarConcepto(void)
     scanf("%lf", &monto);
     printf("Esribe una categoria: (Sugerencias: juegos, salud, comida, universidad, etc) \n\n");
     fflush(stdin);
-    scanf("%s", &categoria);
+    scanf("%s", categoria);
     printf("Esribe el concepto : (Sugerencias: juegos, salud, comida, universidad, etc) \n\n");
     fflush(stdin);
-    scanf("%s", &concepto);
+    scanf("%s", concepto);
     if (opt == 1)
     {
         flujo = fopen("Pasivos.txt", "a");
@@ -179,8 +182,8 @@ int cambiarPassword(void)
 
     printf("Introduce tu nueva password (maximo 10 caracteres):\n");
     fflush(stdin);
-    scanf("%s", &newPassword);
-    fprintf(fichero, "%s", &newPassword);
+    scanf("%s", newPassword);
+    fprintf(fichero, "%s", newPassword);
     printf("Se ha modificado tu password con exito. Ahora es : %s", newPassword);
     fflush(flujo);
     fclose(flujo);
@@ -192,12 +195,14 @@ int validarPassword()
     FILE *fichero;
     fichero = fopen("pass.txt", "rb");
     fflush(stdin);
-    fscanf(fichero, "%s", &password);
+    fscanf(fichero, "%s", password);
     printf("Bienvenido : Escribe tu password\n");
     fflush(stdin);
     scanf("%s", temppass);
-    fflush(flujo);
-    fclose(flujo);
+    printf("%s %s", temppass, password);
+    fflush(fichero);
+    fflush(stdin);
+    fclose(fichero);
     if (!(ret = strncmp(password, temppass, 10)))
     {
         return 1;
@@ -214,9 +219,9 @@ int eliminar(void)
     int delete_line, temp = 1, opt;
 
     printf("Deseas eliminar un pasivo? Presiona 1\nDeseas eliminar un activo? presiona 2\n");
-    fflush(stdin),
+    fflush(stdin);
 
-        scanf("%d", &opt);
+    scanf("%d", &opt);
     if (opt != 1 && opt != 2)
     {
         printf("No introduciste una opcion valida\n");
@@ -225,10 +230,10 @@ int eliminar(void)
 
     //Abir para leer
 
-    (opt==1) 
-    ? (fileptr1 = fopen("Pasivos.txt", "r")) 
-    :  (fileptr1 = fopen("Activos.txt", "r")); 
-    
+    (opt == 1)
+        ? (fileptr1 = fopen("Pasivos.txt", "r"))
+        : (fileptr1 = fopen("Activos.txt", "r"));
+
     ch = getc(fileptr1);
     while (ch != EOF)
     {
@@ -258,23 +263,23 @@ int eliminar(void)
     }
     fclose(fileptr1);
     fclose(fileptr2);
-    
-    (opt==1) 
-    ? (remove("Pasivos.txt")) 
-    :  (remove("Activos.txt")); 
-    
+
+    (opt == 1)
+        ? (remove("Pasivos.txt"))
+        : (remove("Activos.txt"));
+
     //rename the file replica.c to original name
 
-    (opt==1) 
-    ? (rename("replica.c", "Pasivos.txt")) 
-    :  (rename("replica.c", "Activos.txt")); 
-    
+    (opt == 1)
+        ? (rename("replica.c", "Pasivos.txt"))
+        : (rename("replica.c", "Activos.txt"));
+
     printf("\n Despues de ser modificado, ahora los valores son los siguientes: \n");
 
-    (opt==1) 
-    ? (fileptr1 = fopen("Pasivos.txt", "r")) 
-    :  (fileptr1 = fopen("Activos.txt", "r")); 
-   
+    (opt == 1)
+        ? (fileptr1 = fopen("Pasivos.txt", "r"))
+        : (fileptr1 = fopen("Activos.txt", "r"));
+
     ch = getc(fileptr1);
     while (ch != EOF)
     {
@@ -283,4 +288,41 @@ int eliminar(void)
     }
     fclose(fileptr1);
     return 0;
+}
+int imprimirPorFecha(int orden)
+{
+    FILE *fichero;
+    char concepto[20], categoria[20];
+    double monto;
+    struct tm ts;
+    char buf[80];
+    int fecha, c;
+    if (orden == 1){
+        printf("    Todas las entradas de dinero en orden: \n");
+        fichero = fopen("Activos.txt", "rb");
+        while (!feof(fichero))
+        {
+            printf("\n");
+            fscanf(fichero, "%lf %s %s %d", &monto, concepto, categoria, &fecha);
+            time_t rawtime = fecha;
+            ts = *localtime(&rawtime);
+            strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S ", &ts);
+            printf("%lf %s %s %s", monto, concepto, categoria, buf);
+        }
+        fclose(fichero);
+
+        fichero = fopen("Pasivos.txt", "rb");
+        printf("\n    Todos los gastos en orden: \n");
+        while (!feof(fichero))
+        {
+            printf("\n");
+            fscanf(fichero, "%lf %s %s %d", &monto, concepto, categoria, &fecha);
+            time_t rawtime = fecha;
+            ts = *localtime(&rawtime);
+            strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S", &ts);
+            printf("%lf %s %s %s", monto, concepto, categoria, buf);
+        }
+        fclose(fichero);
+        return 0;
+    }
 }
