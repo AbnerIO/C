@@ -343,7 +343,7 @@ int imprimirPorFecha(int orden)
             time_t rawtime = fecha;
             ts = *localtime(&rawtime);
             strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S ", &ts);
-            printf("%lf %s %s %s", monto, concepto, categoria, buf);
+            printf("%s %lf %s %s", buf, monto, concepto, categoria);
         }
         fclose(fichero);
 
@@ -356,7 +356,7 @@ int imprimirPorFecha(int orden)
             time_t rawtime = fecha;
             ts = *localtime(&rawtime);
             strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S", &ts);
-            printf("%lf %s %s %s", monto, concepto, categoria, buf);
+            printf("%s %lf %s %s",buf, monto, concepto, categoria);
         }
         fclose(fichero);
         return 0;
