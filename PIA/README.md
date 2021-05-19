@@ -4,6 +4,9 @@
 
 This is an application to manage personal finances. This application does not have a special reason, I just wanted to apply the knowledge acquired in my structured programming course and put them into practice, then the requirements of my project implemented.
 
+In this application it is expected that the user can manage their expenses in an easy and simple way. The application automates processes such as the search for information, the addition and subtraction of expenses to know the total balance of the user.
+
+
 ## Instructions :technologist:
 
 Files : Activos.txt, Pasivos.txt, main.c, helper.c and header.h are needed.
