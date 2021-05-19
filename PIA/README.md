@@ -4,9 +4,11 @@
 
 This is an application to manage personal finances. This application does not have a special reason, I just wanted to apply the knowledge acquired in my structured programming course and put them into practice, then the requirements of my project implemented.
 
-## Innstructions :technologist:
+## Instructions :technologist:
 
 Files : Activos.txt, Pasivos.txt, main.c, helper.c and header.h are needed.
+
+
 You can also try a demo in : https://onlinegdb.com/If-U6H5-d (It is a demo because it is not modulated, I would recommend that you do it from your compiler)
   
 ## Project requirements :dart:
