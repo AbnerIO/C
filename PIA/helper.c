@@ -59,7 +59,7 @@ int balanceTotal(){
             fscanf(fichero, "%lf  %s %s %d", &montoPasivo, categoriaTemp,concepto, &date);
             totalPas+=montoPasivo;
         }
-        totalPas-=montoPasivo; // correccion de precio ultima linea vacia
+
         printf("\n Pasivos : -%lf\n", totalPas);
         printf("\n Total : %lf\n", (totalAct-totalPas));
         
@@ -83,7 +83,6 @@ int buscarCategoria(char categoria[]){
                printf("%lf %s %s %d\n", monto, concepto, categoria, date);
             }
         }
-        fflush(fichero);
         fclose(fichero);
         fichero=fopen("Pasivos.txt", "rb");
         printf("\n Pasivos encontrados con la categoria: %s\n", categoria);
@@ -120,7 +119,7 @@ int ingresarConcepto(void)
     printf("Esribe una categoria: (Sugerencias: juegos, salud, comida, universidad, etc) \n\n");
     fflush(stdin);
     scanf("%s", categoria);
-    printf("Esribe el concepto : (Sugerencias: juegos, salud, comida, universidad, etc) \n\n");
+    printf("Esribe el concepto : (el nombre) \n\n");
     fflush(stdin);
     scanf("%s", concepto);
     if (opt == 1)
@@ -131,7 +130,7 @@ int ingresarConcepto(void)
     {
         flujo = fopen("Activos.txt", "a");
     }
-    fprintf(flujo, "%.2lf %s %s %lu\n", monto, categoria, concepto, (unsigned long)time(NULL));
+    fprintf(flujo, "\n%.2lf %s %s %lu", monto, categoria, concepto, (unsigned long)time(NULL));
     printf("Se ha registrado correctamente\nmonto: %.2lf  , categoria: %s , concepto: %s, tiempo : %lu\n ", monto, categoria, concepto, (unsigned long)time(NULL));
     fflush(flujo);
     fclose(flujo);
