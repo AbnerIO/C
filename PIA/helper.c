@@ -61,7 +61,7 @@ int balanceTotal(){
         }
         totalPas-=montoPasivo; // correccion de precio ultima linea vacia
         printf("\n Pasivos : -%lf\n", totalPas);
-        printf("\n Total : -%lf\n", (totalAct-totalPas));
+        printf("\n Total : %lf\n", (totalAct-totalPas));
         
         fflush(fichero);
         fclose(fichero);
