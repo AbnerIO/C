@@ -13,6 +13,7 @@ int ingresarConcepto(void);
 int eliminar(void);
 int buscarCategoria(char categoria[]);
 int imprimirPorFecha();
+int balanceTotal(void);
 
 FILE *flujo;
 int main()
@@ -46,7 +47,7 @@ int main()
 
         case '3':
             imprimeLinea();
-            printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver gastos por categoria\n2     Ver por fecha\n3     Salir\n");
+            printf("\nOPCION 3: CONSULTAS\n\nIntroduce la opcion que desees:\n1     Ver gastos por categoria\n2     Ver por fecha\n3     Quiero ver el balance total\n4     Salir\n");
             fflush(stdin);
             opt = getchar();
             consultas(opt);
@@ -107,7 +108,11 @@ int consultas(int option)
         imprimirPorFecha(orden);
         break;
     case '3':
-        printf("Opcion 3\n\n");
+        balanceTotal();
+        return 0;
+        break;
+        case '4':
+        printf("Saliendo\n\n");
         return 0;
         break;
     default:
@@ -115,6 +120,37 @@ int consultas(int option)
         break;
     }
 };
+int balanceTotal(){
+    int date;
+    FILE *fichero;
+    double montoActivo=0, montoPasivo=0, totalPas=0, totalAct=0;
+    char categoriaTemp[15], concepto[10];
+    fichero =fopen("Activos.txt", "rb");
+    while (!feof(fichero))
+        {
+            printf("\n");
+            fscanf(fichero, "%lf  %s %s %d", &montoActivo, categoriaTemp,concepto, &date);
+            totalAct+= montoActivo;
+        }
+        totalAct-=montoActivo; // correccion de precio ultima linea vacia
+        printf("\n Activos : +%lf\n", totalAct);
+        fflush(fichero);
+        fclose(fichero);
+        fichero=fopen("Pasivos.txt", "rb");
+    while (!feof(fichero))
+        {
+            printf("\n");
+            fscanf(fichero, "%lf  %s %s %d", &montoPasivo, categoriaTemp,concepto, &date);
+            totalPas+=montoPasivo;
+        }
+        totalPas-=montoPasivo; // correccion de precio ultima linea vacia
+        printf("\n Pasivos : -%lf\n", totalPas);
+        printf("\n Total : -%lf\n", (totalAct-totalPas));
+        
+        fflush(fichero);
+        fclose(fichero);
+        return 0;
+}
 
 int buscarCategoria(char categoria[]){
     FILE *fichero;
