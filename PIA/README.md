@@ -9,7 +9,7 @@ In this application it is expected that the user can manage their expenses in an
 
 ## video 
 
-https://www.youtube.com/watch?v=l0iPBQrTAI8
+Link : https://youtu.be/MCK-YM4tNjw
 
 ## Instructions :technologist:
 
