@@ -50,7 +50,7 @@ You will be able to register:
 | **.c** |  **.h** | **.txt** |
 |:-----|:--------:|:--------:|
 | main  | header | _Positives_|
-| functions   |    |   _Negatives_  |
+| helpers |    |   _Negatives_  |
 
 
 ### .txt Format 
@@ -65,14 +65,23 @@ Amount - Categorie - Description  - Date
 ## Functions :octocat:
 
 ImprimeLinea(); 
+
 consultas();
+
 balanceTotal();
+
 buscarCategoria();
+
 ingresarConcepto();
+
 imprimeFichero();
+
 cambiarPassword();
+
 validarPassword();
+
 Eliminar();
+
 imprimirPorFecha();
 
 
