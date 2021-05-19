@@ -72,15 +72,15 @@ imprimirPorFecha();
 
 ## UI :iphone:
 
-###1.-Pasword 
+1.-Pasword 
 
-<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/password.png" width="850px" height="450px"></a>
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/password.png" width="650px" height="250px"></a>
 
-###2.-UI 
+2.-UI 
 
 <img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/UI.png" width="550px" height="450px"></a>
 
-###3.-Option 
+3.-Option 
 
 <img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/consultas.png" width="550px" height="450px"></a>
 
