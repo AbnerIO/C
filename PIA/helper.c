@@ -48,7 +48,6 @@ int balanceTotal(){
             fscanf(fichero, "%lf  %s %s %d", &montoActivo, categoriaTemp,concepto, &date);
             totalAct+= montoActivo;
         }
-        totalAct-=montoActivo; // correccion de precio ultima linea vacia
         printf("\n Activos : +%lf\n", totalAct);
         fflush(fichero);
         fclose(fichero);
@@ -75,7 +74,7 @@ int buscarCategoria(char categoria[]){
     int date;
     fichero =fopen("Activos.txt", "rb");
     printf("\n Activos encontrados con la categoria: %s\n", categoria);
-    while (!feof(fichero))
+    while (!feof(fichero) && fichero !=NULL)
         {
             printf("\n");
             fscanf(fichero, "%lf  %s %s %d", &monto, categoriaTemp,concepto, &date);
@@ -83,10 +82,11 @@ int buscarCategoria(char categoria[]){
                printf("%lf %s %s %d\n", monto, concepto, categoria, date);
             }
         }
+        fflush(fichero);
         fclose(fichero);
         fichero=fopen("Pasivos.txt", "rb");
         printf("\n Pasivos encontrados con la categoria: %s\n", categoria);
-    while (!feof(fichero))
+    while (!feof(fichero) &&fichero !=NULL)
         {
             printf("\n");
             fscanf(fichero, "%lf  %s %s %d", &monto, categoriaTemp,concepto, &date);
@@ -94,6 +94,7 @@ int buscarCategoria(char categoria[]){
                printf("%lf %s %s %d\n", monto, concepto, categoria, date);
             }
         }
+        fflush(fichero);
         fclose(fichero);
         return 0;
 }
@@ -148,15 +149,17 @@ int imprimeFichero(void)
         c = getc(fichero);
         printf("%c", c);
     }
+    fflush(fichero);
     fclose(fichero);
 
     fichero = fopen("Pasivos.txt", "rb");
-    printf("    Todos los gastos: \n");
+    printf("    \nTodos los gastos: \n");
     while (!feof(fichero))
     {
         c = getc(fichero);
         printf("%c", c);
     }
+    fflush(fichero);
     fclose(fichero);
     return 0;
 }
