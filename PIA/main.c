@@ -271,7 +271,6 @@ int validarPassword()
     printf("Bienvenido : Escribe tu password\n");
     fflush(stdin);
     scanf("%s", temppass);
-    printf("%s %s", temppass, password);
     fflush(fichero);
     fflush(stdin);
     fclose(fichero);

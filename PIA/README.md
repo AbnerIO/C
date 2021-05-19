@@ -1,26 +1,26 @@
 # Budgeting App FINAL
 
-
-
 ## Synopsis :dizzy_face:
 
-I'm going to develop an app that will help you manage your personal expenses.
-
+This is an application to manage personal finances. This application does not have a special reason, I just wanted to apply the knowledge acquired in my structured programming course and put them into practice, then the requirements of my project implemented.
   
 ## Project requirements :dart:
 
 
 - Password
  ```plain
-  - Before the main interface
+  - At the start 
   - Can be changed
 ```
 - Add Products
+
+You will be able to register:
+
 ```plain
   - + profits
   -  - expenses
   - With Categories (medical, university, bills,etc) 
-  - Date 
+  - *Date automatically generated
  ```
  
 - Ask for information 
@@ -28,12 +28,13 @@ I'm going to develop an app that will help you manage your personal expenses.
   - View all operations
   - View all positives
   - View all negatives
-  - Search by Date (maybe)
+  - Search by Date
   - Search By categorie
  ```
 - Opperations
 ```plain
   - Delete operations
+  - Change my password
   - Get total Balance
 ```
 
@@ -47,48 +48,49 @@ I'm going to develop an app that will help you manage your personal expenses.
 
 ### .txt Format 
 
-!!Experimental 👨‍🔬
-
-Sign - Amount - Categorie - Description  - Date
+Amount - Categorie - Description  - Date
      
-     -1200  Games I_bought_7DTD 1620915321                              +1200 trade I_sold_gummies_idk 1620915329
-     -2485 University Rectoria 1620915324
+     1200  Games I_bought_7DTD 1620915321                              +1200 trade I_sold_gummies_idk 1620915329
+     2485 University Rectoria 1620915324
       
  In this example, the balance will be + 1200 - 1200 - 2485 = **-2485**
-    
- 		
+     		
 ## Functions :octocat:
 
+ImprimeLinea(); 
+consultas();
+balanceTotal();
+buscarCategoria();
+ingresarConcepto();
+imprimeFichero();
+cambiarPassword();
+validarPassword();
+Eliminar();
+imprimirPorFecha();
 
-  create(gasto),
-  
-  delete(type _passive/active_, nombre del gasto), 
-  
-  printPositives(), 
-  
-  printfNegatives() 
-
-  findAllByCategorie(categorie),
-  
-  findAllByAmount(type _passive/active_, min, max),
-  
-  verifyPassword(), 
-  
-  changePassword(newPassword)
-
-  Maybe : timeStampConversor() , sum(), findAllByDate(Date) 
 
 
 ## UI :iphone:
 
-<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/2021-05-13%2008_41_47-Window.png" width="550px" height="450px"></a>
+###1.-Pasword 
+
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/password.png" width="550px" height="450px"></a>
+
+###2.-UI 
+
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/UI.png" width="550px" height="450px"></a>
+
+###3.-Option 
+
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/consultas.png" width="550px" height="450px"></a>
 
 
 ## References :page_with_curl:
 
-none atm
+C Reference Card (ANSI)
 
 ## Author(s)
+
 Abner Velázquez M: 1960233 Programacion Estructurada
 
 ## License
