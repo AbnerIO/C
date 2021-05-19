@@ -7,6 +7,10 @@ This is an application to manage personal finances. This application does not ha
 In this application it is expected that the user can manage their expenses in an easy and simple way. The application automates processes such as the search for information, the addition and subtraction of expenses to know the total balance of the user.
 
 
+## video 
+
+https://www.youtube.com/watch?v=l0iPBQrTAI8
+
 ## Instructions :technologist:
 
 Files : Activos.txt, Pasivos.txt, main.c, helper.c and header.h are needed.
