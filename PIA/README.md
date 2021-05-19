@@ -82,7 +82,7 @@ imprimirPorFecha();
 
 3.-Option 
 
-<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/consultas.png" width="550px" height="450px"></a>
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/Readme_Imgs/consultas.png" width="550px" height="250px"></a>
 
 
 ## References :page_with_curl:
