@@ -62,7 +62,7 @@ int main()
             break;
 
         default:
-            printf("\nNo selecionaste una opcion valida, te dare otra oportunidad\n");
+            printf("\nRevisa\n");
             imprimeLinea();
             break;
         }
