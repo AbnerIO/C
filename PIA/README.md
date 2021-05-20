@@ -103,7 +103,7 @@ imprimirPorFecha();
 
 1.-Pasword 
 
-<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/password.png" width="200px" height="150px"></a>
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/password.png" width="500px" height="150px"></a>
 
 2.-UI 
 
