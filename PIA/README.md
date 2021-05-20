@@ -1,5 +1,6 @@
 # Budgeting App FINAL
 
+
 ## Synopsis :astronaut:
 
 This is an application to manage personal finances. This application does not have a special reason, I just wanted to apply the knowledge acquired in my structured programming course and put them into practice, then the requirements of my project implemented.
@@ -10,6 +11,10 @@ In this application it is expected that the user can manage their expenses in an
 ## video 
 
 Link : https://youtu.be/MCK-YM4tNjw
+
+## Presentation plan
+
+click on "ReadmeAssets". It is the file "preparacion.md"
 
 ## Instructions :technologist:
 
