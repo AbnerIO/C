@@ -1,16 +1,16 @@
-#include <stdio.h>
-#include <time.h>
 #include <string.h>
-#include <stdlib.h>
+#include <time.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int validarPassword();
+int balanceTotal(void);
+int buscarCategoria(char categoria[]);
+int cambiarPassword(void);
+int consultas(int option);
+int eliminar(void);
 int imprimeLinea(void);
 int imprimeFichero(void);
-int cambiarPassword(void);
-int consultas();
-int ingresarConcepto(void);
-int eliminar(void);
-int buscarCategoria(char categoria[]);
 int imprimirPorFecha();
-int balanceTotal(void);
+int ingresarConcepto(void);
+int validarPassword(void);

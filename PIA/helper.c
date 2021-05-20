@@ -1,5 +1,5 @@
 #include "header.h"
-FILE *flujo;
+FILE *doc;
 int imprimeLinea()
 {
     printf("\n-----------------------------------------------------------------------------------------------------------------\n\n");
@@ -125,16 +125,16 @@ int ingresarConcepto(void)
     scanf("%s", concepto);
     if (opt == 1)
     {
-        flujo = fopen("Pasivos.txt", "a");
+        doc = fopen("Pasivos.txt", "a");
     }
     else if (opt == 2)
     {
-        flujo = fopen("Activos.txt", "a");
+        doc = fopen("Activos.txt", "a");
     }
-    fprintf(flujo, "\n%.2lf %s %s %lu", monto, categoria, concepto, (unsigned long)time(NULL));
+    fprintf(doc, "\n%.2lf %s %s %lu", monto, categoria, concepto, (unsigned long)time(NULL));
     printf("Se ha registrado correctamente\nmonto: %.2lf  , categoria: %s , concepto: %s, tiempo : %lu\n ", monto, categoria, concepto, (unsigned long)time(NULL));
-    fflush(flujo);
-    fclose(flujo);
+    fflush(doc);
+    fclose(doc);
 }
 
 int imprimeFichero(void)
@@ -175,8 +175,8 @@ int cambiarPassword(void)
     scanf("%s", newPassword);
     fprintf(fichero, "%s", newPassword);
     printf("Se ha modificado tu password con exito. Ahora es : %s", newPassword);
-    fflush(flujo);
-    fclose(flujo);
+    fflush(doc);
+    fclose(doc);
 }
 int validarPassword()
 {
@@ -202,7 +202,7 @@ int validarPassword()
 
 int eliminar(void)
 {
-    FILE *fileptr1, *fileptr2;
+    FILE *primera, *segunda;
 
     char ch;
     int delete_line, temp = 1, opt;
@@ -217,65 +217,61 @@ int eliminar(void)
         return 0;
     }
 
-    //Abir para leer
-
     (opt == 1)
-        ? (fileptr1 = fopen("Pasivos.txt", "r"))
-        : (fileptr1 = fopen("Activos.txt", "r"));
+        ? (primera = fopen("Pasivos.txt", "r"))
+        : (primera = fopen("Activos.txt", "r"));
 
-    ch = getc(fileptr1);
+    ch = getc(primera);
     while (ch != EOF)
     {
         printf("%c", ch);
-        ch = getc(fileptr1);
+        ch = getc(primera);
     }
-    //rewind
-    rewind(fileptr1);
+
+    rewind(primera); // se regresa
     printf(" \n Ingresa el numero de linea de gasto que deseas eliminar (el orden es de arriba hacia bajo: gasto 1=presiona 1, gasto 2=presiona 2)");
     scanf("%d", &delete_line);
-    //open new file in write mode
-    fileptr2 = fopen("replica.c", "w");
-    ch = getc(fileptr1);
+
+    segunda = fopen("replica.c", "w"); // aqui se hace a migracion al replica.c
+    ch = getc(primera); 
     while (ch != EOF)
     {
-        ch = getc(fileptr1);
+        ch = getc(primera);
         if (ch == '\n')
         {
             temp++;
         }
-        //except the line to be deleted
         if (temp != delete_line)
         {
-            //copy all lines in file replica.c
-            putc(ch, fileptr2);
+
+            putc(ch, segunda); // se copia todo a replica.c
         }
     }
-    fclose(fileptr1);
-    fclose(fileptr2);
+    fclose(primera);
+    fclose(segunda);
 
     (opt == 1)
         ? (remove("Pasivos.txt"))
         : (remove("Activos.txt"));
 
-    //rename the file replica.c to original name
 
     (opt == 1)
-        ? (rename("replica.c", "Pasivos.txt"))
+        ? (rename("replica.c", "Pasivos.txt")) // se renombra replica y ahora parece que nada ha pasado
         : (rename("replica.c", "Activos.txt"));
 
     printf("\n Despues de ser modificado, ahora los valores son los siguientes: \n");
 
     (opt == 1)
-        ? (fileptr1 = fopen("Pasivos.txt", "r"))
-        : (fileptr1 = fopen("Activos.txt", "r"));
+        ? (primera = fopen("Pasivos.txt", "r"))
+        : (primera = fopen("Activos.txt", "r"));
 
-    ch = getc(fileptr1);
+    ch = getc(primera);
     while (ch != EOF)
     {
         printf("%c", ch);
-        ch = getc(fileptr1);
+        ch = getc(primera);
     }
-    fclose(fileptr1);
+    fclose(primera);
     return 0;
 }
 int imprimirPorFecha(int orden)
@@ -283,7 +279,7 @@ int imprimirPorFecha(int orden)
     FILE *fichero;
     char concepto[20], categoria[20];
     double monto;
-    struct tm ts;
+    struct tm ts; // para pasar de timestamp a formato dia mes año 
     char buf[80];
     int fecha, c;
     if (orden == 1){

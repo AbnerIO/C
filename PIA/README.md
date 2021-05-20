@@ -1,6 +1,6 @@
 # Budgeting App FINAL
 
-## Synopsis :dizzy_face:
+## Synopsis :astronaut:
 
 This is an application to manage personal finances. This application does not have a special reason, I just wanted to apply the knowledge acquired in my structured programming course and put them into practice, then the requirements of my project implemented.
 
@@ -113,10 +113,12 @@ imprimirPorFecha();
 
 C Reference Card (ANSI)
 
+
 ## Author(s)
 
-Abner Velázquez M: 1960233 Programacion Estructurada
+Abner Zair Velázquez Domínguez  M: 1960233 Structured Programming
 
 ## License
-For Academic Purposes Only
+
+None
 

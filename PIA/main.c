@@ -3,12 +3,12 @@
 
 int main()
 {
+    time_t tiempo = time(0); 
     int opt, bucle = 1;
 
-    time_t tiempo = time(0); //Genera timestamp --> "%lu", (unsigned long)time(NULL)
 
     bucle = validarPassword();
-    while (bucle == 1)
+    while (bucle == 1) //interfaz
     {
         printf("Introduce la opcion que desees:\n1     Deseo ver todos los gastos\n2     Quiero ingresar algo\n3     Quiero hacer una consulta\n4     Quiero eliminar un gasto\n5     Quiero cambiar mi password\n6     Quiero salir\n");
         fflush(stdin);
@@ -47,7 +47,7 @@ int main()
             break;
 
         case '5':
-            printf("Opcion 5\n\n");
+            printf("Opcion 5\n\n"); 
             imprimeLinea();
             cambiarPassword();
             imprimeLinea();
