@@ -129,7 +129,7 @@ functionality: 2( it works for what it should, but maybe it could have more vali
 organization: 3 ( I consider that my code is clear and self-descriptive)
 
 
-storage, console, etc: 3 ( I think that the presentation in the console could be better, but the files are saved correctly and I use the time library to at least use pointers and structures.)
+storage, console, etc: 2 ( I think that the presentation in the console could be better, but the files are saved correctly and I use the time library to at least use pointers and structures.)
 
 
 documentation: 2(the video isnt the best. both readme´s are good. Thats my opinion)
