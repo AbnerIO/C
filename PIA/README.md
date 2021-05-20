@@ -115,6 +115,15 @@ imprimirPorFecha();
 
 C Reference Card (ANSI)
 
+## Self-assessment
+
+
+complexity: 2 (read, update, delete .txt´s, strings, etc.)
+functionality: 2( it works for what it should, but maybe it could have more validations)
+organization: 3 ( I consider my code to be clear and self-descriptive)
+storage, console, etc: 2 ( I consider that it has a good presentation in the console, that the files are saved correctly and I use the time library to at least use pointers and structures.)
+documentation: 3(In my opinion it looks clean and organized. Its subjective, if the teacher does not agree, I would accept another score in this section.)
+
 
 ## Author(s)
 
