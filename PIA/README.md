@@ -124,7 +124,7 @@ complexity: 2 (read, update, delete .txt´s, strings, etc.)
 functionality: 2( it works for what it should, but maybe it could have more validations)
 
 
-organization: 3 ( I consider my code to be clear and self-descriptive)
+organization: 3 ( I consider my code is clear and self-descriptive)
 
 
 storage, console, etc: 2 ( I consider that it has a good presentation in the console, that the files are saved correctly and I use the time library to at least use pointers and structures.)
