@@ -120,16 +120,16 @@ https://cboard.cprogramming.com/c-programming/144614-opening-reading-updating-te
 ## Self-assessment
 
 
-complexity: 2 (read, update, delete .txt´s, strings, etc.)
+complexity: 2 (read, update, delete .txt´s, strings, etc. use time.h, use string and comparatitions, use validations.)
 
 
 functionality: 2( it works for what it should, but maybe it could have more validations)
 
 
-organization: 3 ( I consider my code is clear and self-descriptive)
+organization: 3 ( I consider that my code is clear and self-descriptive)
 
 
-storage, console, etc: 2 ( I think that the presentation in the console could be better, that the files are saved correctly and I use the time library to at least use pointers and structures.)
+storage, console, etc: 2 ( I think that the presentation in the console could be better, the files are saved correctly and I use the time library to at least use pointers and structures.)
 
 
 documentation: 2(In my opinion it looks clean and organized. Its subjective, if the teacher does not agree, I would accept another score in this section.)
