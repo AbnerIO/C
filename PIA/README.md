@@ -103,15 +103,15 @@ imprimirPorFecha();
 
 1.-Pasword 
 
-<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/password.png" width="450px" height="150px"></a>
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/password.png" width="350px" height="150px"></a>
 
 2.-UI 
 
-<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/UI.png" width="550px" height="450px"></a>
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/UI.png" width="450px" height="350px"></a>
 
 3.-Option 
 
-<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/consultas.png" width="550px" height="250px"></a>
+<img src="https://github.com/AbnerIO/C/blob/main/PIA/ReadmeAssets/consultas.png" width="350px" height="150px"></a>
 
 
 ## References :page_with_curl:
